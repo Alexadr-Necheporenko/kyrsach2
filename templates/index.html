@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новорічна Рекомендаційна Система</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background: url('static/img/christmas-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 50px;
+            text-align: left; /* Вирівнювання тексту по лівому краю */
+        }
+        .btn-custom {
+            background-color: #ff5722;
+            border: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1>Новорічна Рекомендаційна Система</h1>
+        <div class="form-container mx-auto col-md-6">
+            <form action="/recommendations" method="get">
+                <div class="form-group">
+                    <label for="movie">Введіть назву фільму:</label>
+                    <input type="text" id="movie" name="movie" class="form-control" placeholder="Назва фільму" required>
+                </div>
+                <div class="form-group">
+                    <label>Що вам сподобалося у цьому фільмі?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="preference" value="movie" checked>
+                        <label class="form-check-label">Сам фільм</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="preference" value="year">
+                        <label class="form-check-label">Рік випуску</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="preference" value="director">
+                        <label class="form-check-label">Режисер</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-custom">Отримати рекомендації</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
